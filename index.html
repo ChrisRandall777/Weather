@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titleText">Weather</h1>
+
+    <div id="searchBar">
+        <input class="element" type="text" id="location" name="location" placeholder="Enter a Location...">
+        <button class="element" id="locButton">Get Weather!</button>
+    </div>
+
+    <div id="content">
+        <h1 id="locationText"></h1>
+        <div class="break"></div>
+        <img class="element" id="currTempIcon" src="https://freesvg.org/img/1603200920weather-symbol.png">
+        <h1 class="element" id="condText"></h1>
+        <h1 class="element" id="currTemp"></h1>
+        <div id="highLow">
+            <p id="high"></p>
+            <p id="low"></p>
+        </div>
+        <div class="break"></div>
+        <div id="hourlyForecast"></div>
+    </div>
+    
+    <div id="forecast"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
