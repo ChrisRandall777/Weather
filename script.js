@@ -22,7 +22,7 @@ locationInput.addEventListener("keypress", function(e){
 })
 
 function getCurrentInfo(search){
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=2deec64ff2a34bb7b86185000252905&q=${search}&days=7&aqi=no&alerts=no`, {
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=2deec64ff2a34bb7b86185000252905&q=${search}&days=3&aqi=no&alerts=no`, {
         method: "GET",
 
         headers: {
@@ -53,6 +53,8 @@ function getCurrentInfo(search){
             low.innerHTML = ""
         }
         
+    }).catch(() => {
+        alert("Sorry the weather can't be loaded at this time")
     })
 
     
@@ -91,7 +93,7 @@ function updateCurrInfo(currTempInfo, currLocInfo, forecastInfo){
         hourlyForcast.appendChild(newDiv)
     }
 
-    forecastDiv.innerHTML = "<h1>6-Day Forecast</h1><div class=\"break\"></div>"
+    forecastDiv.innerHTML = "<h1>Forecast for the next 2-days</h1><div class=\"break\"></div>"
     forecastInfo.forecastday.forEach((day, i) => {
         if(i != 0){
             let newDiv = document.createElement("div")
