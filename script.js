@@ -1,5 +1,6 @@
 let locationInput = document.getElementById("location")
 let btn = document.getElementById("locButton")
+let contentDiv = document.getElementById("content")
 let currTemp = document.getElementById("currTemp")
 let currTempIcon = document.getElementById("currTempIcon")
 let currTempCond = document.getElementById("condText")
@@ -41,6 +42,7 @@ function getCurrentInfo(search){
             updateCurrInfo(currTempInfo, currLocInfo, forecastInfo)
         })
         } else{
+            contentDiv.style.columnGap = "0"
             locationInput.style.backgroundColor = "#FC6D6D"
             currTemp.innerHTML = ""
             currTempIcon.src = "https://freesvg.org/img/1603200920weather-symbol.png"
@@ -63,6 +65,7 @@ function getCurrentInfo(search){
 function updateCurrInfo(currTempInfo, currLocInfo, forecastInfo){
     let temperature = Math.round(currTempInfo.temp_f)
 
+    contentDiv.style.columnGap = "20px"
     currTempIcon.src = currTempInfo.condition.icon
     currTempCond.innerHTML = currTempInfo.condition.text
     currTemp.innerHTML = temperature + "\u00B0F"
